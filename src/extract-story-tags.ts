@@ -25,6 +25,7 @@ function createStoryTagsEntry(): string {
 
     return [
         new Date().toISOString(),
+        storyTags.length,
         ...storyTags
     ]
         .join(" ");
