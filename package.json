@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "start": "yarn build && node out/index.js",
+    "start": "yarn build && node out/extract-story-tags",
     "test": "jest --testPathPattern=src && tslint -p .",
     "build": "rm -rf out/ && tsc"
   },
