@@ -1,24 +1,18 @@
-# Typescript Template
+# Story tags extractor
 
-This is a template project, meaning it is created to be copied or forked to serve as a base for other software.
-
-It comes equipped with:
-
-- [Babel](https://babeljs.io/)
-- [Jest](https://jestjs.io/)
-- a sensible `.gitignore`
-- a couple of dummy (Typescript) source files to demonstrate it works and is testable
-- [Typescript configuration](https://www.typescriptlang.org/)
-- [TSLint](https://palantir.github.io/tslint/) configured with some opinion (and not to conflict with Prettier)
-- [Prettier](https://prettier.io/)
-  
 ## Usage
 
-Take the files and use them to start your own Javascript project.
+- `yarn build`
+- `node out/extract-story-tags inputFilePath outputFilePath testPassingRegex`
 
-### Using Yarn
+### Arguments
 
-- gather dependencies: `yarn`
-- build: `yarn build`
-- test: `yarn test`
-- start: `yarn start`
+`inputFilePath` - a path to a text file which contains one line per passing test with story tags in hashtag format & an indication of whether the test passed or not.
+
+`outputFilePath` - a path to a text file which will be *appended* with a single story tag entry of the format: `currentTimeInIsoFormat #tag1 #tag2 ...`
+
+`testPassingRegex` - a regular expression used to match lines with passing tests. When on command line, put it in quotes.
+
+### Example
+
+`node out/extract-story-tags ./test-results.txt ./story-tags.txt "[ ]*PASS .*"`
