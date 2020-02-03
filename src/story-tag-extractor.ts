@@ -25,7 +25,9 @@ function distinctlyConcatenateArrays(target: string[], source: string[]): string
 }
 
 function extractValidTags(testName: string): string[] {
-  return testName.split(" ")
+  return testName
+      .replace(/\(\)/, "")
+      .split(" ")
     .filter(tag => tag.startsWith("#"))
     .filter(isValidTag);
 }

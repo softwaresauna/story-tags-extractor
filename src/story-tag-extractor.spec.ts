@@ -24,6 +24,9 @@ describe("extracts valid tags", () => {
         [["#foo", "#foo"], ["#foo"]],
         [["#bar #foo", "#bar", "#foo #bar #bar"], ["#bar", "#foo"]],
 
+        [["#foo()"], ["#foo"]],
+        [["#bar #foo()"], ["#bar", "#foo"]],
+
         [["#123", "#Foo", "#FOO", "#foo123", "#123FOO"], ["#123", "#Foo", "#FOO", "#foo123", "#123FOO"]],
         [["#12.3", "#F-o-o", "#_FOO", "#foo/123", "#(123)FOO"], []],
 
